@@ -11,27 +11,41 @@ namespace TemperamentDovzenokD
 {
     public partial class MainPage : CarouselPage
     {
+
         public MainPage()
         {
-            TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
-
-            tapGestureRecognizer.Tapped += TapGestureRecognizer_Tapped;
-
-
-            ContentPage content = new ContentPage();
-            StackLayout stack = new StackLayout();
-            Image image = new Image 
+            Button btn = new Button 
             {
-                Source = "holerik.jpg",
-                WidthRequest = 400,
-                HeightRequest = 400,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand
-            };
-            image.GestureRecognizers.Add(tapGestureRecognizer);
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
 
-            stack.Children.Add(image);
-            content.Content = stack;
+
+            };
+            Button btn1 = new Button
+            {
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
+
+
+            };
+            Button btn2 = new Button
+            {
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
+
+               
+            };
+            Button btn3 = new Button
+            {
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
+            };
+
+            btn.Clicked += Btn_Clicked;
+            btn1.Clicked += Btn1_Clicked;
+            btn2.Clicked += Btn2_Clicked; 
+            btn3.Clicked += Btn3_Clicked;
+
 
 
             var holerikContentPage = new ContentPage
@@ -40,10 +54,20 @@ namespace TemperamentDovzenokD
                 {
                     Children =
                     {
-                    new Label
-                    {   Text="Холерик",
-                        FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-                        HorizontalOptions = LayoutOptions.Center},
+                        new Label
+                        {
+                            Text = "Холерик",
+                            FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                            HorizontalOptions = LayoutOptions.Center
+                        },
+                        new Image
+                        {  Source = "holerik.jpg",
+                        WidthRequest = 400,
+                        HeightRequest = 400,
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.CenterAndExpand
+                        },
+                        btn
                     }
                 }
             };
@@ -62,7 +86,9 @@ namespace TemperamentDovzenokD
                         WidthRequest = 400,
                         HeightRequest = 400,
                         HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.CenterAndExpand}
+                        VerticalOptions = LayoutOptions.CenterAndExpand
+                    },
+                    btn1
                     }
                 }
             };
@@ -82,7 +108,9 @@ namespace TemperamentDovzenokD
                         WidthRequest = 400,
                         HeightRequest = 400,
                         HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.CenterAndExpand }
+                        VerticalOptions = LayoutOptions.CenterAndExpand
+                    },
+                    btn2
                     }
                 }
             };
@@ -102,7 +130,9 @@ namespace TemperamentDovzenokD
                         WidthRequest = 400,
                         HeightRequest = 400,
                         HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.CenterAndExpand}
+                        VerticalOptions = LayoutOptions.CenterAndExpand
+                    },
+                    btn3
                     }
                 }
             };
@@ -112,7 +142,25 @@ namespace TemperamentDovzenokD
             Children.Add(melanholikContentPage);
         }
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void Btn3_Clicked(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("https://testometrika.com/personality-and-temper/the-formula-of-temperament-a-belov/");
+            await Browser.OpenAsync(uri);
+        }
+
+        private async void Btn2_Clicked(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("https://testometrika.com/personality-and-temper/the-formula-of-temperament-a-belov/");
+            await Browser.OpenAsync(uri);
+        }
+
+        private async void Btn1_Clicked(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("https://testometrika.com/personality-and-temper/the-formula-of-temperament-a-belov/");
+            await Browser.OpenAsync(uri);
+        }
+
+        private async void Btn_Clicked(object sender, EventArgs e)
         {
             Uri uri = new Uri("https://testometrika.com/personality-and-temper/the-formula-of-temperament-a-belov/");
             await Browser.OpenAsync(uri);
