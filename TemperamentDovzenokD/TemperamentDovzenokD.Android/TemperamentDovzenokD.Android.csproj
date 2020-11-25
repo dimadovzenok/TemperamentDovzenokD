@@ -86,9 +86,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\sangvinik.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TemperamentDovzenokD\TemperamentDovzenokD.csproj">
       <Project>{CF197EE3-E6D5-48DA-B17A-789BBCEF2991}</Project>
       <Name>TemperamentDovzenokD</Name>
@@ -98,10 +95,13 @@
     <AndroidResource Include="Resources\drawable\flegmatik.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\melanholik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\holerik.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\melanholik.jpg" />
+    <AndroidResource Include="Resources\drawable\sangvinik.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
