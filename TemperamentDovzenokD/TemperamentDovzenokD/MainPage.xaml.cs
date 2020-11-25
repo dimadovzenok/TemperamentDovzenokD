@@ -46,6 +46,36 @@ namespace TemperamentDovzenokD
             btn2.Clicked += Btn2_Clicked; 
             btn3.Clicked += Btn3_Clicked;
 
+            var MainContentPage = new ContentPage
+            {
+                Content = new StackLayout
+                {
+                    Children =
+                    {
+                        new Label
+                        {
+                            Text = "Темперамент",
+                            FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                            HorizontalOptions = LayoutOptions.Center
+                        },
+                        new Image
+                        {  Source = "temp.jpg",
+                        WidthRequest = 400,
+                        HeightRequest = 400,
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.CenterAndExpand
+                        },
+                        new Label
+                        {
+                            Text = "Темпера́мент (лат. temperamentum — «устойчивая смесь компонентов») — устойчивая совокупность индивидуальных психофизиологических особенностей личности, связанных с динамическими (то есть темпом, ритмом, интенсивностью психических процессов).",
+                            HorizontalOptions = LayoutOptions.Center
+                        },
+
+
+                    }
+                }
+            };
+
 
 
             var holerikContentPage = new ContentPage
@@ -136,6 +166,7 @@ namespace TemperamentDovzenokD
                     }
                 }
             };
+            Children.Add(MainContentPage);
             Children.Add(holerikContentPage);
             Children.Add(sangvinikContentPage);
             Children.Add(flegmatikContentPage);
